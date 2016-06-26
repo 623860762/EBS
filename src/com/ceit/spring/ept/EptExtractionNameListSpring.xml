@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+
+ <beans>
+	<bean id="eptExtractionNameListServiceTarget" class="com.ceit.ebs.ept.service.impl.EptExtractionNameListService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="eptExtractionNameListService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="eptExtractionNameListServiceTarget" />
+		</property>
+	</bean> 
+	      
+	<bean id="eptExtractionNameListAction" class="com.ceit.ebs.ept.action.EptExtractionNameListAction">
+		<property name="eptExtractionNameListService">
+    		<ref local="eptExtractionNameListService" />  		  
+  		</property>
+	</bean>
+</beans>

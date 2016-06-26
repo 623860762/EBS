@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="CmsArticleStruts" extends="json-default">
+		<action name="getArticleList" class="cmsArticleAction" method="getArticleList" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="persistArticle" class="cmsArticleAction" method="persistArticle" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="delArticlesByIds" class="cmsArticleAction" method="delArticlesByIds" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="mergeArticle" class="cmsArticleAction" method="mergeArticle" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="editArticlePage" class="cmsArticleAction" method="editArticlePage" >
+	    	<result name="editArticlePage">
+	    		../article/editArticle.jsp
+		   	</result>
+	   </action>
+	   <action name="viewArticlePage" class="cmsArticleAction" method="viewArticlePage" >
+	    	<result name="viewArticlePage">
+	    		../article/viewArticle.jsp
+		   	</result>
+	   </action>
+	</package>
+</struts>   

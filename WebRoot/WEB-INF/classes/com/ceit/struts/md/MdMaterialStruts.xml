@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="MdMaterialStruts" extends="json-default">
+		<action name="getMaterialList" class="mdMaterialAction" method="getMaterialList" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="persistMaterial" class="mdMaterialAction" method="persistMaterial" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="delMatByIds" class="mdMaterialAction" method="delMatByIds" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="forMatInsertPage" class="mdMaterialAction" method="forMatInsertPage" >
+	    	<result name="addMaterialPage">
+	    		../material/addMaterial.jsp
+		   	</result>
+	   </action>
+	   <action name="forMaterialPage" class="mdMaterialAction" method="forMaterialPage" >
+	    	<result name="MaterialPage">
+	    		../material/viewMaterial.jsp
+		   	</result>
+	   </action>
+	   <action name="foreditMaterial" class="mdMaterialAction" method="foreditMaterial" >
+	    	<result name="editMaterialPage">
+	    		../material/editMaterial.jsp
+		   	</result>
+	   </action>
+	   <action name="mergeMaterial" class="mdMaterialAction" method="mergeMaterial" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

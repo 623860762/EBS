@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="EptSpecialtyStruts" extends="json-default">
+
+	   <action name="getSpecialtyById" class="eptSpecialtyAction" method="getSpecialtyById" >
+	    	<result name="success">
+	    		SpecialtyDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="getSpecialtyForTree" class="eptSpecialtyAction" method="getSpecialtyForTree" >
+	    	<result type="json">
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="updateSpecialtyById" class="eptSpecialtyAction" method="updateSpecialtyById" >
+	    	<result type="json">
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertSpecialty" class="eptSpecialtyAction" method="insertSpecialty" >
+	    	<result type="json">/
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	  <action name="deleteSpecialty" class="eptSpecialtyAction" method="deleteSpecialty" >
+	    	<result type="json">
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveSpecialty" class="eptSpecialtyAction" method="upMoveSpecialty" >
+	    	<result type="json">
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="downMoveSpecialty" class="eptSpecialtyAction" method="downMoveSpecialty" >
+	    	<result type="json">
+	    	    <param name="root">speJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

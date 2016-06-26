@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="mdMaterialServiceTarget" class="com.ceit.ebs.md.service.impl.MdMaterialService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="mdMaterialService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="mdMaterialServiceTarget" />
+		</property>
+	</bean> 
+	
+	<bean id="mdMaterialAction" class="com.ceit.ebs.md.action.MdMaterialAction">
+		<property name="mdMaterialService">
+    		<ref local="mdMaterialService" />  		  
+  		</property>
+		<property name="mdFeatService">
+    		<ref bean="mdFeatService" />  		  
+  		</property>
+		<property name="mdFeatValService">
+    		<ref bean="mdFeatValService" />  		  
+  		</property>
+	</bean>
+</beans>

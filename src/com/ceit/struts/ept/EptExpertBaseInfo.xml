@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EptExpertBaseInfo" extends="json-default">
+	<action name="querydata" class="eptExpertBaseinfoAction" method="querydata">
+			<result type="json">                    
+				<param name="root">infoObj</param>
+			</result>
+		</action>
+	</package>
+</struts>

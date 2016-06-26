@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="MdCategoryStruts" extends="json-default">
+	   <action name="viewCategory" class="mdCategoryAction" method="viewCategory" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonArray</param>
+		   	</result>
+	   </action>
+	   <action name="persistCategory" class="mdCategoryAction" method="persistCategory" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="getJsonList" class="mdCategoryAction" method="getJsonList" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="getCateForTree" class="mdCategoryAction" method="getCateForTree" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonArray</param>
+		   	</result>
+	   </action>
+	   <action name="delCategory" class="mdCategoryAction" method="delCategory" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="editCatPage" class="mdCategoryAction" method="editCatPage" >
+	    	<result name="editCatPage">
+	    		../category/editCategory.jsp
+		   	</result>
+	   </action>
+	   <action name="mergeCat" class="mdCategoryAction" method="mergeCat" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

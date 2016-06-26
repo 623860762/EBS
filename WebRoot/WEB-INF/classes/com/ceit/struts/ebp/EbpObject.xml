@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbpObject" extends="json-default">
+		
+		<!-- 新增项目记录   龚瑞   2014-08-18 11:28:11 -->
+		
+		<!-- 通过id删除一条分标记录 	龚瑞   	2014-08-22 09:12:36-->
+		<action name="deleteEbpObjectbyId" class="ebpObjectAction" method="deleteObjectbyId">
+			<result type="json">
+				<param name="root">objectObj</param>
+			</result>
+		</action>
+		<!-- 转向分标页面 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="turnToDivideObject" class="ebpObjectAction" method="turnToDivideObject">
+			<result name="success">
+	    		appjsps/ebp/obj/divideObject.jsp
+		   	</result>
+		</action> 
+		<!-- 转向修改分标页面 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="turnToModifyObject" class="ebpObjectAction" method="getObjectbyId">
+			<result name="success">
+	    		appjsps/ebp/obj/modifyEbpObject.jsp
+		   	</result>
+		</action> 
+		<!-- 修改分标记录 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="modifyObject" class="ebpObjectAction" method="modifyObject">
+		   	<result type="json">
+				<param name="root">objectObj</param>
+			</result>
+		</action>
+		<!-- 通过id获取一条标记录 -->
+		<action name="getEbpObjectbyId" class="ebpObjectAction" method="getObjectbyId">
+			<result name="success">
+	    		appjsps/ebp/obj/detailEbpObject.jsp
+		   	</result>
+		</action> 
+		<!-- 通过项目id查询标记录   龚瑞   2014-08-21 08:15:21 -->
+		<action name="getEbpObjectbyProjectId" class="ebpObjectAction" method="getObjectbyProjectId">
+<!--			<result name="success">-->
+<!--	    		appjsps/obj/divideObject.jsp-->
+<!--		   	</result>-->
+			<result type="json">
+				<param name="root">objectObj</param>
+			</result>
+		</action>
+		<!-- 项目分标操作 -->
+		<action name="divideObjectFromProject" class="ebpObjectAction" method="divideObject">
+			<result type="json">
+				<param name="root">objectJSON</param>
+			</result>
+		</action>
+		<!-- 查询所有分标数据 -->
+		<action name="queryAllEbpObjectData" class="ebpObjectAction" method="querydata">
+			<result type="json">
+				<param name="root">objectObj</param>
+			</result>
+		</action>
+		<action name="getObjectForTree" class="ebpObjectAction" method="getObjectForTree">
+			<result type="json">
+				<param name="root">objectJSON</param>
+			</result>
+		</action>
+		<action name="getObjectById" class="sysObjectAction" method="getOrganById" >
+	    	<result name="success">
+	    		appjsps/ebp/package/dividePackage.jsp
+		   	</result>
+	   </action>
+	</package>
+</struts>

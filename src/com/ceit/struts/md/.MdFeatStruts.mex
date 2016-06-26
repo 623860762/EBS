@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="MdFeatStruts" location="10,9" size="460,71">
+    <action name="getFeatList" location="15,23" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="persistFeat" location="260,23" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="delFeatsByIds" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+</Struts2Diagram>
+

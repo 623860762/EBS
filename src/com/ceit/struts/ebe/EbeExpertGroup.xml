@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbeExpertGroup" extends="json-default">
+		<action name="showExpertInGroup" class="ebeExpertGroupAction" method="showExpertInGroup">
+			<result type="json">
+				<param name="root">ebeExpertGroupObj</param>
+			</result>
+		</action>
+		<action name="deleteEbeExpertGroupbyId" class="ebeExpertGroupAction" method="deleteEbeExpertGroupbyId">
+			<result type="json">
+				<param name="root">ebeExpertGroupObj</param>
+			</result>
+		</action>
+		<action name="setHeader" class="ebeExpertGroupAction" method="setHeader">
+			<result type="json">
+				<param name="root">ebeExpertGroupObj</param>
+			</result>
+		</action>
+		<action name="jumpEbeExpertGroup" class="ebeExpertGroupAction" method="jumpEbeExpertGroup">
+			<result name="success">
+	    		appjsps/ebe/EbeExpertGroup/manageEbeExpertGroup.jsp
+		   	</result>
+		</action>
+		<action name="showExpertCouldInGroup" class="ebeExpertGroupAction" method="showExpertCouldInGroup">
+			<result type="json">
+				<param name="root">ebeExpertGroupObj</param>
+			</result>
+		</action>
+		<action name="addExpertToGroup" class="ebeExpertGroupAction" method="addExpertToGroup">
+			<result type="json">
+				<param name="root">ebeExpertGroupObj</param>
+			</result>
+		</action>
+	</package>
+</struts>

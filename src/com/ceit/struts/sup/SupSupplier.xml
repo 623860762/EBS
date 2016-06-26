@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="SupSupplier" extends="json-default">		
+		<!-- 新增供应商记录   陈祖歌  2014-08-18  -->
+		<action name="insertSupplier" class="supSupplierAction" 
+		method="insertSupplier">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 查询供应商   陈祖歌  2014-08-19  -->
+		<action name="querySupplier" class="supSupplierAction" method="queryData">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 跳转至供应商审核页面 陈祖歌  2014-08-20  -->
+		<action name="getSupplierVobyId" class="supSupplierAction" method="getSupSupplierVobyId">
+			<result name="success">
+	    		appjsps/sup/SupSupplier/auditSupplier.jsp
+		   	</result>
+		</action>
+		<!-- 根据ID设置供应商审核失败  陈祖歌  2014-08-20  -->
+		<action name="failAudit" class="supSupplierAction" method="failAudit">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 根据ID设置供应商审核成功  陈祖歌  2014-08-20  -->
+		<action name="passAudit" class="supSupplierAction" method="passAudit">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 根据ID获取供应商信息  陈祖歌  2014-08-20  -->
+		<action name="getSupSupplierVobyId" class="supSupplierAction" method="getSupSupplierVobyId">
+			<result name="success">
+	    		appjsps/sup/SupSupplier/modifySupSupplier.jsp
+		   	</result>
+		</action>
+		<!-- 修改供应商信息  陈祖歌  2014-08-20  -->
+		<action name="updateSupplier" class="supSupplierAction" method="updateSupSupplier">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 跳转至供应商详细信息界面  陈祖歌  2014-08-20  -->
+		<action name="getSupSupplierVoDetailbyId" class="supSupplierAction" method="getSupSupplierVobyId">
+			<result name="success">
+	    		appjsps/sup/SupSupplier/detailSupSupplier.jsp
+		   	</result>
+		</action>
+				<!-- 跳转至供应商详细信息界面  陈祖歌  2014-08-20  -->
+		<action name="deleteSupSupplierbyId" class="supSupplierAction" method="deleteSupSupplierbyId">
+			<result type="json">
+				<param name="root">supplierObj</param>
+			</result>
+		</action>
+		<!-- 跳转至招标页面 陈祖歌  2014-08-20  -->
+		<action name="getSupVobyId" class="supSupplierAction" method="getSupSupplierVobyId">
+			<result name="success">
+	    		appjsps/ebp/file/manageEbpFileUpload.jsp
+		   	</result>
+		</action>
+		
+	</package>
+</struts>

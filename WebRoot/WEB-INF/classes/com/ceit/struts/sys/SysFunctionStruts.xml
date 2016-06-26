@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysFunctionStruts" extends="json-default">
+	   <action name="getFunctionForTree" class="sysFunctionAction" method="getFunctionForTree" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getFunctionById" class="sysFunctionAction" method="getFunctionById" >
+	    	<result name="success">
+	    		../function/functionDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="modifyFunctionById" class="sysFunctionAction" method="modifyFunctionById" >
+	    	<result name="success">
+	    		../function/functionModify.jsp
+		   	</result>
+	   </action>
+	   <action name="updateFunctionById" class="sysFunctionAction" method="updateFunctionById" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertFunction" class="sysFunctionAction" method="insertFunction" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	   <action name="deleteFunction" class="sysFunctionAction" method="deleteFunction" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveFunction" class="sysFunctionAction" method="upMoveFunction" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	   <action name="downMoveFunction" class="sysFunctionAction" method="downMoveFunction" >
+	    	<result type="json">
+	    	    <param name="root">functionJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

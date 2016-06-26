@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbeGroupPackage" extends="json-default">
+		<action name="showGroupPackageList" class="ebeGroupPackageAction" method="showGroupPackageList">
+			<result type="json">
+				<param name="root">ebeGroupPackageObj</param>
+			</result>
+		</action>
+		<action name="showPackageNotInGroupList" class="ebeGroupPackageAction" method="showPackageNotInGroupList">
+			<result type="json">
+				<param name="root">ebeGroupPackageObj</param>
+			</result>
+		</action>
+		<action name="jumpEbeGroupPackage" class="ebeGroupPackageAction" method="initPackageGroup">
+			<result name="success">
+	    		appjsps/ebe/EbeGroupPackage/manageEbeGroupPackage.jsp
+		   	</result>
+		</action>
+		<action name="removePackagefromGroup" class="ebeGroupPackageAction" method="removePackagefromGroup">
+			<result type="json">
+				<param name="root">ebeGroupPackageObj</param>
+			</result>
+		</action>
+		
+		<action name="addPackageToGroup" class="ebeGroupPackageAction" method="addPackageToGroup">
+			<result type="json">
+				<param name="root">ebeGroupPackageObj</param>
+			</result>
+		</action>
+	</package>
+</struts>

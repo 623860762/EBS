@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ceit.common.entity.EBPDict" table="EBP_DICT">
+		<id name="dicId" column="DIC_ID" type="string" length="32"> 
+        </id> 
+        <property name="dicName" column="DIC_NAME" />   
+        <property name="dicParentId" column="DIC_PARENT_ID" />   
+        <property name="dispIndex" column="DISP_INDEX" />     
+        <property name="memo" column="MEMO" /> 
+        <property name="updateTime" column="UPDATE_TIME" /> 
+	</class>
+</hibernate-mapping>
+

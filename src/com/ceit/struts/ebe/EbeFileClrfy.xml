@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbeFileClrfy" extends="json-default">
+		<action name="insertEbeFileClrfy" class="ebeFileClrfyAction" method="insertEbeFileClrfy">
+			<result type="json">
+				<param name="root">ebeFileClrfyObj</param>
+			</result>
+		</action>
+		<action name="showEbeFileClrfy" class="ebeFileClrfyAction" method="showEbeFileClrfy">
+			<result name="success">
+	    		appjsps/ebe/EbeFileClrfy/showEbeFileClrfy.jsp
+		   	</result>
+		</action>
+		<action name="queryEbeFileClrfyData" class="ebeFileClrfyAction" method="queryData">
+			<result type="json">
+				<param name="root">ebeFileClrfyObj</param>
+			</result>
+		</action>
+		<action name="deleteEbeFileClrfybyId" class="ebeFileClrfyAction" method="deleteEbeFileClrfybyId">
+			<result type="json">
+				<param name="root">ebeFileClrfyObj</param>
+			</result>
+		</action>
+		<action name="updateEbeFileClrfy" class="ebeFileClrfyAction" method="updateEbeFileClrfy">
+			<result type="json">
+				<param name="root">ebeFileClrfyObj</param>
+			</result>
+		</action>
+		<action name="showEbeFileClrfyInModifyPage" class="ebeFileClrfyAction" method="showEbeFileClrfy">
+			<result name="success">
+	    		appjsps/ebe/EbeFileClrfy/modifyEbeFileClrfy.jsp
+		   	</result>
+		</action>
+	</package>
+</struts>

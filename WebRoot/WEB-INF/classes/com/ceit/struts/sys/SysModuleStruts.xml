@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysModuleStruts" extends="json-default">
+	   <action name="getModuleForTree" class="sysModuleAction" method="getModuleForTree" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getModuleById" class="sysModuleAction" method="getModuleById" >
+	    	<result name="success">
+	    		../module/moduleDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="modifyModuleById" class="sysModuleAction" method="modifyModuleById" >
+	    	<result name="success">
+	    		../module/moduleModify.jsp
+		   	</result>
+	   </action>
+	   <action name="updateModuleById" class="sysModuleAction" method="updateModuleById" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertModule" class="sysModuleAction" method="insertModule" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="deleteModule" class="sysModuleAction" method="deleteModule" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveModule" class="sysModuleAction" method="upMoveModule" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="downMoveModule" class="sysModuleAction" method="downMoveModule" >
+	    	<result type="json">
+	    	    <param name="root">moduleJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

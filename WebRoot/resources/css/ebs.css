@@ -1,0 +1,107 @@
+@charset "utf-8";
+.ass_div_center{
+	margin-top:160px;
+	width:850px;
+	height:200px;
+	border:1px solid blue;
+}
+.ass_margin_top{
+	margin-top:10px;
+}
+.ass_div_center span{
+	float:left;
+	display:block;
+	width:100%;
+	height:45px;
+	line-height:45px;
+}
+.ass_span_font{
+	float:left;
+	display:block;
+	font-size:20px;
+	font-weight:bold;
+}
+.ass_sub_button{
+	margin-top:7px;
+	color:#ffffff;
+	font-size:13px;
+	font-weight:bold;
+	display:block;
+	background-color:#159FD2;
+	width:140px;
+	height:30px;
+	line-height:30px;
+	-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+}
+.ass_sub_button:hover{
+	background-color:#29B1E3;
+	-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+}
+.td_css{
+	margin-top:13px;
+	height:20px;
+	line-height:20px;
+}
+.button_span_location{
+	display:block;
+	width:90px;
+	float:right;
+}
+.button_span_locNew{
+	display:block;
+	width:130px;
+	float:right;
+}
+.column_head_word{
+	font-weight:bold;
+	font-size:13px;
+}
+.head_padding_left{
+	padding-left:15px;
+}
+.flow_line1{
+	width:20px;
+	border-bottom:1px solid #ADADAD;
+	display:inline-block;
+	margin-bottom:2px;
+}
+.new_td1{
+	padding-right:0px;
+	border:none;
+}
+.feat_ul{
+	width:345px;
+	display:block;
+	float:left;
+}
+.feat_ul_li1{
+	float:left;
+	width:168px;
+	padding-right:12px;
+}
+.feat_ul_li2{
+	float:right;
+	margin-right:2px;
+	width:160px;
+}
+/*是否显示*/
+/*-------------超链接字体样式-------------*/
+a.navi_font_class{
+	color:#ffffff;
+}
+a.navi_font_class:hover{
+	color:#ffffff;
+}
+a.head_more{
+	color:#2A00E1
+}
+a.head_more:hover{
+	text-decoration:underline;
+	color:#2A00E1;
+}
+a.regist_login_a{
+	color:#016EC0;
+}
+a.regist_login_a:hover{
+	color:#212629;
+}

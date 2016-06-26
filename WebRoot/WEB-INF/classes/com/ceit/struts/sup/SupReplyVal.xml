@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="SupReplyVal" extends="json-default">
+		
+		<!-- 新增供应商记录   陈祖歌  2014-08-18  -->
+		<action name="uploadPay" class="supReplyValAction" 
+		method="uploadPay">
+			<result type="json">
+				<param name="root">replyObj</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

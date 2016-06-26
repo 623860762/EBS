@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="ebpDictServiceTarget" class="com.ceit.common.services.impl.EBPDictService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="ebpDictService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="ebpDictServiceTarget" />
+		</property>
+	</bean> 
+	
+<!--	<bean id="testAction" class="com.ceit.ebs.cn.test.action.TestAction">-->
+<!--		<property name="sysFunctionService">-->
+<!--    		<ref local="sysFunctionService" />  		  -->
+<!--  		</property>-->
+<!--	</bean>-->
+</beans>

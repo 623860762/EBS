@@ -1,0 +1,87 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd">
+	<diskStore path="d:\\temmp" />
+	<cacheManagerEventListenerFactory
+		class="" properties="" />
+	<defaultCache maxElementsInMemory="10000" eternal="true"
+		timeToIdleSeconds="600" overflowToDisk="true"></defaultCache>
+	<cache name="EBP_DICT"  maxElementsInMemory="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />
+<!--	<cache name="GBT2260" maxEntriesLocalHeap="1000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECT_CN_PROJECT_CONF" maxEntriesLocalHeap="1000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECT_CONF_SYS_CURRENT" maxEntriesLocalHeap="1000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECP_CONF_CURRENT" maxEntriesLocalHeap="1000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECP_MAIN_CTRL" maxEntriesLocalHeap="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECT_LOC_PAGE_CONTENT" maxEntriesLocalHeap="10000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+	<cache name="ECT_EXT_RESOURCE" maxEntriesLocalHeap="10000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO" />
+    <cache name="ECT_MD_CATEGORY" maxEntriesLocalHeap="10000"
+		eternal="true" memoryStoreEvictionPolicy="FIFO">
+		<searchable>
+			<searchAttribute name="categoryId" expression="value.getCategoryId()"/>
+			<searchAttribute name="categoryName" expression="value.getCategoryName()" />
+			<searchAttribute name="categoryCode" expression="value.getCategoryCode()" />
+			<searchAttribute name="categoryParentPath"
+				expression="value.getCategoryParentPath()" />
+			<searchAttribute name="categoryOrder" expression="value.getCategoryOrder()" />
+			<searchAttribute name="categoryGroupCode"
+				expression="value.getCategoryGroupCode()" />	
+			<searchAttribute name="freezeStatus" expression="value.getFreezeStatus()" />
+			<searchAttribute name="customCompanyId" expression="value.getCustomCompanyId() " />
+			<searchAttribute name="partitionColumn" expression="value.getPartitionColumn() " />
+			
+		</searchable>
+	</cache>
+	<cache name="ECT_MD_MATERIAL" maxEntriesLocalHeap="0"
+		eternal="true" memoryStoreEvictionPolicy="FIFO">
+		<searchable>
+			<searchAttribute name="matId" expression="value.getMatId()" />
+			<searchAttribute name="matCode" expression="value.getMatCode()" />
+			<searchAttribute name="categoryId" expression="value.getCategoryId()" />
+			<searchAttribute name="categoryName" expression="value.getCategoryName()" />
+			<searchAttribute name="categoryValList" expression="value.getCategoryValList()" />
+			<searchAttribute name="matDesc" expression="value.getMatDesc()" />
+			<searchAttribute name="matLongDesc" expression="value.getMatLongDesc()" />
+			<searchAttribute name="unitName" expression="value.getUnitName()" />
+			<searchAttribute name="opStatus" expression="value.getOpStatus()" />
+			<searchAttribute name="matRemark" expression="value.getMatRemark() " />
+			<searchAttribute name="customCompanyId" expression="value.getCustomCompanyId() " />
+			<searchAttribute name="partitionColumn" expression="value.getPartitionColumn() " />			
+			<searchAttribute name="guiGe" expression="value.getGuiGe() " />
+			<searchAttribute name="caiZhi" expression="value.getCaiZhi() " />
+			<searchAttribute name="xingHao" expression="value.getXingHao() " />
+			<searchAttribute name="biaoZhun" expression="value.getBiaoZhun() " />
+			<searchAttribute name="otherAttr1" expression="value.getOtherAttr1() " />
+			<searchAttribute name="otherAttr2" expression="value.getOtherAttr2() " />
+			<searchAttribute name="otherAttr3" expression="value.getOtherAttr3() " />
+			<searchAttribute name="featValIds" expression="value.getFeatValIds() " />
+		</searchable>
+	</cache>
+	<cache name="ECT_MD_SERIAL_NUMBER" maxEntriesLocalHeap="0"
+		eternal="true" memoryStoreEvictionPolicy="FIFO">
+		<searchable>
+			<searchAttribute name="serialNumberId" />
+			<searchAttribute name="categoryCode" expression="value.getCategoryCode()" />
+			<searchAttribute name="serialNumber" expression="value.getSerialNumber()" />
+			<searchAttribute name="serialNumberCopy" expression="value.getSerialNumberCopy()" />
+			<searchAttribute name="customCompanyId" expression="value.getCustomCompanyId() " />
+			<searchAttribute name="partitionColumn" expression="value.getPartitionColumn() " />
+			
+		</searchable>
+	</cache>
+	
+	<cache name="ECT_MD_FEAT" maxEntriesLocalHeap="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />
+	<cache name="EPT_SPECIALTY" maxEntriesLocalHeap="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />
+	<cache name="EPT_ORG" maxEntriesLocalHeap="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />
+	<cache name="SMT_MODEL_INFO" maxEntriesLocalHeap="10000" eternal="true"
+		memoryStoreEvictionPolicy="FIFO" />   -->
+</ehcache>

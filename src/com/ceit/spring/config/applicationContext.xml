@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver">
+		</property>
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.0.165:1521:EBSDEV">
+		</property>
+		<property name="username" value="busi"></property>
+		<property name="password" value="busi"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop> 
+				<prop key="hibernate.format_sql">true </prop>
+			</props>
+		</property>
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:com/ceit/common/entity</value>
+				<value>classpath:com/ceit/ebs/**/entity</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager"   class="org.springframework.orm.hibernate3.HibernateTransactionManager">    
+         <property name="sessionFactory">    
+            <ref local="sessionFactory" />    
+         </property>    
+    </bean>
+    
+    <bean id="tableDao" class="com.ceit.common.dao.impl.TableDao">
+	   <property name="sessionFactory">
+	      <ref local="sessionFactory"/>
+	   </property>
+	</bean>
+    <bean id="treeDao" class="com.ceit.common.dao.impl.TreeDao">
+	   <property name="sessionFactory">
+	      <ref local="sessionFactory"/>
+	   </property>
+	</bean>
+	
+</beans>

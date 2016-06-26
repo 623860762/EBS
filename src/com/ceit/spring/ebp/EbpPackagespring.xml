@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="ebpPackageServiceTarget" class="com.ceit.ebs.ebp.service.impl.EbpPackageService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="ebpPackageService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="ebpPackageServiceTarget" />
+		</property>
+	</bean> 
+	<bean id="ebpPackageAction" class="com.ceit.ebs.ebp.action.EbpPackageAction">
+		<property name="ebpPackageService">
+    		<ref local="ebpPackageService" />  		  
+  		</property>
+	</bean>
+</beans>

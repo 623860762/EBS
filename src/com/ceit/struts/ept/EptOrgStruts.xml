@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="EptOrgStruts" extends="json-default">
+
+	   <action name="getOrgById" class="eptOrgAction" method="getOrgById" >
+	    	<result name="success">
+	    		OrgDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="getOrgForTree" class="eptOrgAction" method="getOrgForTree" >
+	    	<result type="json">
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="updateOrgById" class="eptOrgAction" method="updateOrgById" >
+	    	<result type="json">
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertOrg" class="eptOrgAction" method="insertOrg" >
+	    	<result type="json">/
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	  <action name="deleteOrg" class="eptOrgAction" method="deleteOrg" >
+	    	<result type="json">
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveOrg" class="eptOrgAction" method="upMoveOrg" >
+	    	<result type="json">
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="downMoveOrg" class="eptOrgAction" method="downMoveOrg" >
+	    	<result type="json">
+	    	    <param name="root">orgJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysUserStruts" extends="json-default">
+	   <action name="getUserData" class="sysUserAction" method="getUserData" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getUserForTree" class="sysUserAction" method="getUserForTree" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getUserById" class="sysUserAction" method="getUserById" >
+	    	<result name="success">
+	    		../user/userDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="modifyUserById" class="sysUserAction" method="modifyUserById" >
+	    	<result name="success">
+	    		../user/userModify.jsp
+		   	</result>
+	   </action>
+	   <action name="updateUserById" class="sysUserAction" method="updateUserById" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertUser" class="sysUserAction" method="insertUser" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="deleteUser" class="sysUserAction" method="deleteUser" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveUser" class="sysUserAction" method="upMoveUser" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	   <action name="downMoveUser" class="sysUserAction" method="downMoveUser" >
+	    	<result type="json">
+	    	    <param name="root">userJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

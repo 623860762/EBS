@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="CmsArticleTemplateStruts" extends="json-default">
+		<action name="getArticleTemplateList" class="cmsArticleTemplateAction" method="getArticleTemplateList" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="persistArticleTemplate" class="cmsArticleTemplateAction" method="persistArticleTemplate" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="delArticleTemplatesByIds" class="cmsArticleTemplateAction" method="delArticleTemplatesByIds" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="mergeArticleTemplate" class="cmsArticleTemplateAction" method="mergeArticleTemplate" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="editArticleTemplatePage" class="cmsArticleTemplateAction" method="editArticleTemplatePage" >
+	    	<result name="editArticleTemplatePage">
+	    		../template/editArticleTemplate.jsp
+		   	</result>
+	   </action>
+	   <action name="viewArticleTemplatePage" class="cmsArticleTemplateAction" method="viewArticleTemplatePage" >
+	    	<result name="viewArticleTemplatePage">
+	    		../template/viewArticleTemplate.jsp
+		   	</result>
+	   </action>
+	</package>
+</struts>   

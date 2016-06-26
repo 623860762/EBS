@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysResourceStruts" extends="json-default">
+	   <action name="getResourceForTree" class="sysResourceAction" method="getResourceForTree" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getResourceById" class="sysResourceAction" method="getResourceById" >
+	    	<result name="success">
+	    		../resource/resourceDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="modifyResourceById" class="sysResourceAction" method="modifyResourceById" >
+	    	<result name="success">
+	    		../resource/resourceModify.jsp
+		   	</result>
+	   </action>
+	   <action name="updateResourceById" class="sysResourceAction" method="updateResourceById" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertResource" class="sysResourceAction" method="insertResource" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	   <action name="deleteResource" class="sysResourceAction" method="deleteResource" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveResource" class="sysResourceAction" method="upMoveResource" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	   <action name="downMoveResource" class="sysResourceAction" method="downMoveResource" >
+	    	<result type="json">
+	    	    <param name="root">resourceJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

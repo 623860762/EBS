@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="SupProjectSupplier" extends="json-default">
+		
+		<!-- 供应商购买文件   陈祖歌  2014-08-18  -->
+		<action name="buyFiles" class="supProjectSupplierAction" method="buyFiles">
+			<result type="json">
+				<param name="root">projectSupplierObj</param>
+			</result>
+		</action>
+		<!-- 供应商下载文件   陈祖歌  2014-08-18  -->
+		<action name="loadFiles" class="supProjectSupplierAction" method="loadFiles">
+			<result type="json">
+				<param name="root">projectSupplierObj</param>
+			</result>
+		</action>	
+		<!-- 跳转至供应商投标页面 陈祖歌  2014-08-20  -->
+		<action name="getPriId" class="supProjectSupplierAction" method="getPriId">
+			<result name="success">
+	    		appjsps/sup/SupReplyVal/addSupReplyVal.jsp
+		   	</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="MdCategoryStruts" location="10,9" size="180,351">
+    <action name="viewCategory" location="15,23" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="persistCategory" location="15,163" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="getJsonList" location="15,303" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="getCateForTree" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+</Struts2Diagram>
+

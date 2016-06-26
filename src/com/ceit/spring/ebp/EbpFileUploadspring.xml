@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+
+	<bean id="ebpFileUploadServiceTarget" class="com.ceit.ebs.ebp.service.impl.EbpFileUploadService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="ebpFileUploadService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="ebpFileUploadServiceTarget" />
+		</property>
+	</bean> 
+	
+	<bean id="ebpFileUploadAction" class="com.ceit.ebs.ebp.action.EbpFileUploadAction">
+		<property name="ebpFileUploadService">
+    		<ref local="ebpFileUploadService" />  		  
+  		</property>
+	</bean>
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbeRepeal" extends="json-default">
+		<action name="insertEbeRepeal" class="ebeRepealAction" method="insertEbeRepeal">
+			<result type="json">
+				<param name="root">ebeRepealObj</param>
+			</result>
+		</action>
+		<action name="showEbeRepeal" class="ebeRepealAction" method="showEbeRepeal">
+			<result name="success">
+	    		appjsps/ebe/EbeRepeal/showEbeRepeal.jsp
+		   	</result>
+		</action>
+		<action name="queryEbeRepealData" class="ebeRepealAction" method="queryEbeRepealData">
+			<result type="json">
+				<param name="root">ebeRepealObj</param>
+			</result>
+		</action>
+		<action name="deleteEbeRepealbyId" class="ebeRepealAction" method="deleteEbeRepealbyId">
+			<result type="json">
+				<param name="root">ebeRepealObj</param>
+			</result>
+		</action>
+		<action name="updateEbeRepeal" class="ebeRepealAction" method="updateEbeRepeal">
+			<result type="json">
+				<param name="root">ebeRepealObj</param>
+			</result>
+		</action>
+		<action name="showEbeRepealInModifyPage" class="ebeRepealAction" method="showEbeRepeal">
+			<result name="success">
+	    		appjsps/ebe/EbeRepeal/modifyEbeRepeal.jsp
+		   	</result>
+		</action>
+	</package>
+</struts>

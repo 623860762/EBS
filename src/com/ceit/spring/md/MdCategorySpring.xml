@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+
+	<bean id="mdCategoryServiceTarget" class="com.ceit.ebs.md.service.impl.MdCategoryService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="mdCategoryService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="mdCategoryServiceTarget" />
+		</property>
+	</bean> 
+	
+	<bean id="mdCategoryAction" class="com.ceit.ebs.md.action.MdCategoryAction">
+		<property name="mdCategoryService">
+    		<ref local="mdCategoryService" />  		  
+  		</property>
+	</bean>
+</beans>

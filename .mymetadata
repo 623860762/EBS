@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="EBS"
+  id="myeclipse.1404712179350"
+  context-root="/EBS"
+  j2ee-spec="5.0"
+  archive="EBS.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

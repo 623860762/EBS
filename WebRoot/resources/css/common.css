@@ -1,0 +1,39 @@
+@charset "utf-8";
+body {font: 12px/20px Arial,Tahoma,Helvetica,'微软雅黑','宋体',sans-serif;background:#fff;color:#212629;height:auto;margin-top:0,auto;margin-left:0;padding:0;}
+table{font-size:inherit;*border-collapse:collapse;*empty-cells:show;font-size:12px;}
+table td{word-break:break-all;word-wrap:break-word;}
+html,body,div,form,p,h3,h4,ul,li,a,b,span,input,label,img,i,h1,h2,h3,h4,h5,h6,dl,dt,dd,iframe{ margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6{font-size:14px;font-weight:normal;}
+/*谷歌下input背景颜色成黄色的解决方案*/
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+b{font-weight:normal;}
+input,button{ outline:none; -moz-outside:none;}
+button::-moz-focus-inner,input::-moz-focus-inner{ border:0px;}
+input {blr:e­xpression(/*去除点击按钮时的虚线*/
+this.onFocus=this.blur())} /*for IE*/ 
+input {outline:}/*for FireFox*/ 
+img{border:none;}
+ul,li{ list-style:none outside none;}
+/*默认<a href="#">超链接样式*/
+a{outline: none;cursor:pointer;}
+a:active {star:expression(this.onFocus=this.blur());}
+/*a:focus { outline:0;}
+a:link {color:blue}
+a:hover {color: red;}
+a:visited {color:blue;}
+a:hover,a:focus,a:link,a:visited{text-decoration: none;}*/
+/*--------------------------------------------------------*/
+/*input样式*/
+.text{border:1px solid #95B8E7;width:145px;height:12px;line-height:13px;padding:4px;vertical-align:middle;background:#fff;}
+/*表格样式*/
+.table_common{border-collapse: collapse;border:1px solid #E0E0E0;background:#F2F2F2;}
+.table_common tr{border-collapse: collapse;border-bottom:1px solid #E0E0E0;background:#EEF6FC;height:24px;line-height:24px;}
+.table_common td{border:1px solid #E0E0E0;line-height:24px;}
+.table_head{background:#EEF6FC;text-align:center;height:25px;text-align=center;}
+.table_td1{background:#EAECF1;padding-right:15px;border:1px solid #E0E0E0;text-align:right;width:168px;}
+/*宽度高度的定义*/
+.w130{width:130px;}
+.w150{width:150px;}
+.w200{width:200px;}
+.h20_w160{height:20px;width:160px;}
+.calender_h_w{height:20px;width:155px;}

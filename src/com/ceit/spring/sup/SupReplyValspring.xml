@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="supReplyValServiceTarget" class="com.ceit.ebs.sup.service.impl.SupReplyValService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="supReplyValService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="supReplyValServiceTarget" />
+		</property>
+	</bean> 
+	
+	<bean id="supReplyValAction" class="com.ceit.ebs.sup.action.SupReplyValAction">
+		<property name="supReplyValService">
+    		<ref local="supReplyValService" />  		  
+  		</property>
+	</bean>
+</beans>

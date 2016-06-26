@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbeGroup" extends="json-default">
+		<action name="insertEbeGroup" class="ebeGroupAction" method="insertEbeGroup">
+			<result type="json">
+				<param name="root">ebeGroupObj</param>
+			</result>
+		</action>
+		<action name="showEbeGroup" class="ebeGroupAction" method="showEbeGroup">
+			<result name="success">
+	    		appjsps/ebe/EbeGroup/showEbeGroup.jsp
+		   	</result>
+		</action>
+		<action name="queryGroupInProject" class="ebeGroupAction" method="queryGroupInProject">
+			<result type="json">
+				<param name="root">ebeGroupObj</param>
+			</result>
+		</action>
+		<action name="deleteEbeGroupbyId" class="ebeGroupAction" method="deleteEbeGroupbyId">
+			<result type="json">
+				<param name="root">ebeGroupObj</param>
+			</result>
+		</action>
+		<action name="updateEbeGroup" class="ebeGroupAction" method="updateEbeGroup">
+			<result type="json">
+				<param name="root">ebeGroupObj</param>
+			</result>
+		</action>
+		<action name="showEbeGroupInModifyPage" class="ebeGroupAction" method="showEbeGroup">
+			<result name="success">
+	    		appjsps/ebe/EbeGroup/modifyEbeGroup.jsp
+		   	</result>
+		</action>
+		<action name="jumpEbeGroup" class="ebeGroupAction" method="jumpEbeGroup">
+			<result name="success">
+	    		appjsps/ebe/EbeGroup/manageEbeGroup.jsp
+		   	</result>
+		</action>
+		<action name="getGroupTree" class="ebeGroupAction" method="getGroupTree">
+			<result type="json">
+				<param name="root">ebeGroupJSON</param>
+			</result>
+		</action>
+	</package>
+</struts>

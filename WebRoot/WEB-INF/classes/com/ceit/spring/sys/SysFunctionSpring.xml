@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+	<bean id="sysFunctionServiceTarget" class="com.ceit.ebs.sys.service.impl.SysFunctionService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="sysFunctionService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="sysFunctionServiceTarget" />
+		</property>
+	</bean> 
+	
+	<bean id="sysFunctionAction" class="com.ceit.ebs.sys.action.SysFunctionAction">
+		<property name="sysFunctionService">
+    		<ref local="sysFunctionService" />  		  
+  		</property>
+  		<property name="sysResourceService">
+    		<ref bean="sysResourceService" />  		  
+  		</property>
+	</bean>
+</beans>

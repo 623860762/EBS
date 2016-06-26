@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="ebeFileClrfyServiceTarget" class="com.ceit.ebs.ebe.service.impl.EbeFileClrfyService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="ebeFileClrfyService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="ebeFileClrfyServiceTarget" />
+		</property>
+	</bean> 
+	<bean id="ebeFileClrfyVo" class="com.ceit.ebs.ebe.vo.EbeFileClrfyVo">
+	</bean>
+	<bean id="ebeFileClrfyAction" class="com.ceit.ebs.ebe.action.EbeFileClrfyAction">
+		<property name="ebeFileClrfyService">
+    		<ref local="ebeFileClrfyService" />  		  
+  		</property>
+  		<property name="ebpPackageService">
+    		<ref bean="ebpPackageService" />  		  
+  		</property>
+  		<property name="ebeFileClrfyVo">
+  			<ref local="ebeFileClrfyVo"/>
+  		</property>
+	</bean>
+</beans>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysRoleStruts" extends="json-default">
+	   <action name="getRoleData" class="sysRoleAction" method="getRoleData" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getRoleForTree" class="sysRoleAction" method="getRoleForTree" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getRoleById" class="sysRoleAction" method="getRoleById" >
+	    	<result name="success">
+	    		../role/roleDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="modifyRoleById" class="sysRoleAction" method="modifyRoleById" >
+	    	<result name="success">
+	    		../role/roleModify.jsp
+		   	</result>
+	   </action>
+	   <action name="updateRoleById" class="sysRoleAction" method="updateRoleById" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="insertRole" class="sysRoleAction" method="insertRole" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="deleteRole" class="sysRoleAction" method="deleteRole" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="upMoveRole" class="sysRoleAction" method="upMoveRole" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	   <action name="downMoveRole" class="sysRoleAction" method="downMoveRole" >
+	    	<result type="json">
+	    	    <param name="root">roleJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

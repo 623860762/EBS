@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbpPackage" extends="json-default">
+		<!-- 通过id删除一条记录 -->
+		<action name="deletePackagebyId" class="ebpPackageAction" method="deletePackagebyId">
+			<result type="json">
+				<param name="root">packageObj</param>
+			</result>
+		</action>
+		<!-- 由项目转向分包页面 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="turnToDividePackage" class="ebpPackageAction" method="turnToDividePackage">
+			<result name="success">
+	    		appjsps/ebp/package/dividePackage.jsp
+		   	</result>
+		</action> 
+		<!-- 由分标转向分包页面 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="turnToDividePackageFromObject" class="ebpPackageAction" method="turnToDividePackage">
+			<result name="success">
+	    		appjsps/ebp/package/dividePackageFromObject.jsp
+		   	</result>
+		</action> 
+		<!-- 转向详情页面 -->
+		<action name="getPackagebyId" class="ebpPackageAction" method="getPackagebyId">
+			<result name="success">
+	    		appjsps/ebp/package/detailPackage.jsp
+		   	</result>
+		</action>
+		
+		<!-- 转向修改分包页面 	龚瑞  	2014-08-22 09:12:36-->
+		<action name="turnToModifyPackage" class="ebpPackageAction" method="getPackagebyId">
+			<result name="success">
+	    		appjsps/ebp/package/modifyPackage.jsp
+		   	</result>
+		</action> 
+		
+		<!-- 通过projectid获取一条包记录 -->
+		<action name="getEbpPackagebyProjectId" class="ebpPackageAction" method="getEbpPackagebyProjectId">
+			<result type="json">
+	    		<param name="root">packageObj</param>
+		   	</result>
+		</action>
+		<!-- 项目分包操作 -->
+		<action name="dividePackageInProject" class="ebpPackageAction" method="dividePackageInProject">
+			<result type="json">
+				<param name="root">packageObj</param>
+			</result>
+		</action>
+		<!-- 由标分包操作 -->
+		<action name="dividePackageInObject" class="ebpPackageAction" method="dividePackageInObject">
+			<result type="json">
+				<param name="root">packageObj</param>
+			</result>
+		</action>
+		<!-- 查询所有分包数据 -->
+		<action name="queryAllEbpPackageData" class="ebpPackageAction" method="querydata">
+			<result type="json">
+				<param name="root">packageObj</param>
+			</result>
+		</action>
+		<!-- 修改包 -->
+		<action name="modifyEbpPackage" class="ebpPackageAction" method="modifyEbpPackage">
+			<result type="json">
+	    		<param name="root">packageObj</param>
+		   	</result>
+		</action>
+		<action name="getPackageByObjectId" class="ebpPackageAction" method="getPackageByObjectId">
+			<result type="json">
+	    		<param name="root">packageObj</param>
+		   	</result>
+		</action>
+		<action name="turnToDivideObjectTree" class="ebpPackageAction" method="turnToDivideObjectTree">
+			<result name="success">
+	    		appjsps/ebp/obj/divideObjectTree.jsp
+		   	</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">	
+ <beans>
+ 
+	<bean id="eptOrgServiceTarget" class="com.ceit.ebs.ept.service.impl.EptOrgService">
+	    <property name="tableDao">
+	      <ref bean="tableDao"/>
+	    </property>
+	    <property name="treeDao">
+	      <ref bean="treeDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="eptOrgService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property> 
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props> 
+		</property>
+		<property name="target">
+			<ref local="eptOrgServiceTarget" />
+		</property>
+	</bean> 
+	
+<bean id="eptOrgAction" class="com.ceit.ebs.ept.action.EptOrgAction">
+		<property name="eptOrgService">
+    		<ref local="eptOrgService" />  		  
+  		</property>
+	</bean>
+</beans>

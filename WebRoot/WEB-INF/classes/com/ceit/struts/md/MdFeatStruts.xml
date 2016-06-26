@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="MdFeatStruts" extends="json-default">
+		<action name="getFeatList" class="mdFeatAction" method="getFeatList" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="persistFeat" class="mdFeatAction" method="persistFeat" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="delFeatsByIds" class="mdFeatAction" method="delFeatsByIds" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="mergeFeat" class="mdFeatAction" method="mergeFeat" >
+	    	<result type="json">
+	    	    <param name="root">ebsJsonObj</param>
+		   	</result>
+	   </action>
+	   <action name="editFeatPage" class="mdFeatAction" method="editFeatPage" >
+	    	<result name="editFeatPage">
+	    		../feat/editFeat.jsp
+		   	</result>
+	   </action>
+	</package>
+</struts> 

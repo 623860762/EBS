@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysOrganStruts" extends="json-default">
+	   <action name="getOrganData" class="sysOrganAction" method="getOrganData" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getOrganById" class="sysOrganAction" method="getOrganById" >
+	    	<result name="success">
+	    		../organ/organDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="getOrganForTree" class="sysOrganAction" method="getOrganForTree" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="updateOrganById" class="sysOrganAction" method="updateOrganById" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="insertOrgan" class="sysOrganAction" method="insertOrgan" >
+	    	<result type="json">/
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="deleteOrgan" class="sysOrganAction" method="deleteOrgan" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="upMoveOrgan" class="sysOrganAction" method="upMoveOrgan" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="downMoveOrgan" class="sysOrganAction" method="downMoveOrgan" >
+	    	<result type="json">
+	    	    <param name="root">organJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

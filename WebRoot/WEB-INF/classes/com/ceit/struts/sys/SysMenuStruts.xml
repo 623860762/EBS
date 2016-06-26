@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="SysMenuStruts" extends="json-default">
+	   <action name="getMenuData" class="sysMenuAction" method="getMenuData" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   <action name="getMenuById" class="sysMenuAction" method="getMenuById" >
+	    	<result name="success">
+	    		../menu/menuDetail.jsp
+		   	</result>
+	   </action>
+	   <action name="getMenuDataForTree" class="sysMenuAction" method="getMenuDataForTree" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="getMenuForTree" class="sysMenuAction" method="getMenuForTree" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="updateMenuById" class="sysMenuAction" method="updateMenuById" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="insertMenu" class="sysMenuAction" method="insertMenu" >
+	    	<result type="json">/
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="deleteMenu" class="sysMenuAction" method="deleteMenu" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="upMoveMenu" class="sysMenuAction" method="upMoveMenu" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	   
+	   <action name="downMoveMenu" class="sysMenuAction" method="downMoveMenu" >
+	    	<result type="json">
+	    	    <param name="root">menuJSON</param>
+		   	</result>
+	   </action>
+	</package>
+</struts>   

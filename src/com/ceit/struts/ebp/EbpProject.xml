@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 项目管理 配置文件  -->
+<struts>
+	<package name="EbpProject" extends="json-default">
+		
+		<!-- 新增项目记录   龚瑞   2014-08-18 11:28:11 -->
+		<action name="insertProject" class="ebpProjectAction"
+			method="insertProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="queryEbpProjectData" class="ebpProjectAction" method="getLXEbpProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="queryEbpProjectAllData" class="ebpProjectAction" method="queryData">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="getEbpProjectVobyId" class="ebpProjectAction" method="getEbpProjectVobyId">
+<!--			<result type="json">-->
+<!--				<param name="root">projectObj</param>-->
+<!--			</result>-->
+			<result name="success">
+	    		appjsps/ebp/project/modifyEbpProject.jsp
+		   	</result>
+		</action>
+		
+		<action name="getEbpProjectVoDetailbyId" class="ebpProjectAction" method="getEbpProjectVobyId">
+<!--			<result type="json">-->
+<!--				<param name="root">projectObj</param>-->
+<!--			</result>-->
+			<result name="success">
+	    		appjsps/ebp/project/detailEbpProject.jsp
+		   	</result>
+		</action>
+		<action name="deleteEbpProjectbyId" class="ebpProjectAction" method="deleteEbpProjectbyId">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="updateEbpProject" class="ebpProjectAction" method="updateEbpProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="getEbpProjectbyIsObject" class="ebpProjectAction" method="getFBIAOEbpProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!--  -->
+		<action name="getEbpProjectNotIsObject" class="ebpProjectAction" method="getFBAOEbpProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<action name="getSHEbpProject" class="ebpProjectAction" method="getSHEbpProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 立项项目的下发操作 -->
+		<action name="nextFromProject" class="ebpProjectAction" method="nextFromProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 确认分标操作 -->
+		<action name="nextFromObject" class="ebpProjectAction" method="nextFromObject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 确认分包操作 -->
+		<action name="nextFromPackage" class="ebpProjectAction" method="nextFromPackage">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 重立项操作 -->
+		<action name="returnToLXProject" class="ebpProjectAction" method="returnToLXProject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 提交审核操作 -->
+		<action name="submitForAudit" class="ebpProjectAction" method="submitForAudit">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+		<!-- 发标操作 -->
+		<action name="sendObject" class="ebpProjectAction" method="sendObject">
+			<result type="json">
+				<param name="root">projectObj</param>
+			</result>
+		</action>
+	</package>
+</struts>
